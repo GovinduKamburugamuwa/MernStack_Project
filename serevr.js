@@ -6,17 +6,23 @@ const express = require('express')
 
 //call express function
 app=express()
+
+//express json middleware
+app.use(express.json())
+
+// calling for the routing page
+const workRoutes = require('./routes/workoutes')
+
 //middleware
 app.use((req,res,next)=>
 {
     console.log(req.path,req.method)
     next()
 })
+
 //making get request
-app.get('/',(req,res)=>
-{
-    res.json({mssg:'Welcome MernFirst Step,Now We listnenig for port 4000'})
-})
+app.use('/api/workoutes',workRoutes)
+
 // listening to a port
 app.listen(process.env.PORT,()=>
 {
