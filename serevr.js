@@ -39,4 +39,3 @@ mongoose.connect(process.env.MONGO_URI)
 //making get request
 app.use('/api/workoutes',workRoutes)
 
-// listening to a port
