@@ -8,7 +8,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 //call express function
-app=express()
+const app=express()
 
 //express json middleware
 app.use(express.json())
